@@ -1,0 +1,72 @@
+<%layout("/layouts/boilerplate.ejs") %>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-10 offset-1">
+                <form action="/listings/<%=listing._id%>?_method=put" method="post" class="needs-validation" novalidate>
+                    <div >
+                        <label class="form-label" for="image">Image URL</label>
+                        <input class="form-control" type="text" name="listing[image]" id="image" value="<%=listing.image%>" required>
+                        <div class="invalid-feedback">
+                            Paste Movie Image Address URL
+                        </div>
+                        <div class="valid-feedback">
+                            Looks Good!
+                        </div>
+                    </div><br>
+                    <div >
+                        <label class="form-label" for="name">Movie</label>
+                        <input class="form-control" type="text" name="listing[name]" id="name" value="<%=listing.name%>" required>
+                        <div class="invalid-feedback">
+                            Enter Movie Title
+                        </div>
+                        <div class="valid-feedback">
+                            Looks Good!
+                        </div>
+                    </div><br>
+                    <div >
+                        <label class="form-label" for="year">Year</label>
+                        <input class="form-control" type="text" name="listing[year]" id="year" value="<%=listing.year%>" required>
+                        <div class="invalid-feedback">
+                            Enter Movie Year
+                        </div>
+                        <div class="valid-feedback">
+                            Looks Good!
+                        </div>
+                    </div><br>
+                    <div >
+                        <label class="form-label" for="genre">Genre</label>
+                        <input class="form-control" type="text" name="listing[genre]" id="genre" value="<%=listing.genre%>" required>
+                        <div class="invalid-feedback">
+                            Enter Genre
+                        </div>
+                        <div class="valid-feedback">
+                            Looks Good!
+                        </div>
+                    </div><br>
+                    <div >
+                        <label class="form-label" for="cast">Cast</label>
+                        <input class="form-control" type="text" name="listing[cast]" id="cast" value="<%=listing.cast%>" required>
+                        <div class="invalid-feedback">
+                            Enter Cast
+                        </div>
+                        <div class="valid-feedback">
+                            Looks Good!
+                        </div>
+                    </div><br>
+                    <div >
+                        <label class="form-label" for="director">Director</label>
+                        <input class="form-control" type="text" name="listing[director]" id="director" value="<%=listing.director%>" required>
+                        <div class="invalid-feedback">
+                           Enter Director Name
+                        </div>
+                        <div class="valid-feedback">
+                            Looks Good!
+                        </div>
+                    </div><br>
+                    <button type="submit" class="btn btn-primary">Edit</button>
+                 </form>
+            </div>
+        </div>
+    </div>
+</body>

@@ -1,0 +1,277 @@
+*{
+  
+    font-family: "Plus Jakarta Sans", serif;
+    /* font-optical-sizing: auto; */
+    /* font-weight: <weight>; */
+    font-style: normal;
+    /* color:#fff; */
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  
+}
+
+/* navbar */
+
+.navbar{
+  background-color: #fff !important;
+  /* background-color: #292929;
+  background-image: linear-gradient(to right, #151515 0, #222 50%, #151515 100%); */
+  height: 110.6px;
+  margin-bottom: 1rem !important;
+}
+
+.fa-video{
+  font-size: 2rem;
+  /* color: #FFFF0A; */
+  /* color: #fe424d; */
+  color: rgb(229, 9, 20);
+  margin: 0 1rem 0 3.5rem !important;
+}
+
+.mainIcon{
+  display: flex;
+  align-items: center;
+}
+
+.mainText{
+  color: rgb(229,9,20);
+  font-weight: 700;
+  margin-left: -10px !important;
+}
+
+.yellow{
+  /* color: #FFFF0A; */
+  /* color: #fe424d; */
+  color: rgb(229, 9, 20);
+}
+
+.navbar-brand{
+  margin-right: 2rem !important;
+}
+
+
+
+.navIcons{
+  display: flex;
+  align-items: center;
+  margin: 0 1.5rem 0 0 !important;
+}
+
+/* .addMovie{
+  margin-right: 0 !important;
+  background-color: rgb(229, 9, 20);
+} */
+
+.navbar-nav{
+  margin-right: 3rem !important;
+}
+
+.nav-right{
+  margin-right: -0.09rem !important;
+}
+
+.nav-link{
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #111 !important;
+}
+
+.fontWeight600{
+  font-weight: 600 !important;
+}
+
+.signupLogin{
+  /* padding: 0.5rem; */
+  
+  font-weight: 700;
+}
+
+.addMovie{
+  /* padding: 0.5rem; */
+  
+  font-weight: 700;
+  color: #fff !important;
+  background-color: rgb(229, 9, 20) !important;
+}
+
+.show{
+  background-color: #fff !important;
+  padding-left: 3rem !important;
+  transition: 0.5s ease-in-out;
+  margin-top: 1rem;
+  width: 100% !important;
+}
+
+/* .show .navbar-nav .navIcons i{
+  margin-right: 1rem !important;
+  transition: 0.5s ease-in-out;
+} */
+
+.container-fluid{
+  background-color: #fff !important;
+}
+
+
+
+/* body */
+.container1{  
+  margin: 0 4rem 0  4rem;
+  flex: 1;
+  
+}
+
+.card-img-top{
+  /* width: 100%; */
+  border-radius: 1rem;
+  height: 22rem;
+  object-fit: cover;
+}
+
+.indexCard {
+  /* width: 16rem; */
+  border: none !important;
+  margin-bottom: 3rem !important;
+  
+}
+
+.indexCard:hover{
+  transform: scale(1.05);
+}
+
+.card-body{
+  padding: 0 0 0 0 !important;
+  margin: 1rem 0 0 0.5rem !important;
+
+}
+
+.card-body p{
+  font-weight: 600 !important;
+  margin-bottom: 0.3rem;
+}
+.singleMovie{
+  text-decoration: none;
+  color:#121212
+}
+
+.singleMovie:hover{
+  text-decoration: none;
+  color:#121212;
+
+}
+
+/* footer */
+.footer{
+  background-color: #ebebeb;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1.1rem;
+  margin-top: 1rem !important;
+}
+
+.footerImages{
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  font-size: 1.5rem;
+  
+}
+
+.footer p{
+  margin: 0 !important;
+  
+}
+
+.footerImages a{
+  color:#232323;
+}
+
+.footerImages a:hover{
+  transform: scale(1.2);
+}
+
+.filmCritic{
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.madeWith{
+  font-weight: 800;
+}
+
+.footer p i{
+  color: red !important;
+  font-size: 1rem;
+}
+
+.deleteMovieButton{
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom:1rem;
+}
+
+/* show */
+
+.singleMovieInfo{
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.fontWeight600{
+  font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+/* media-queires */
+
+@media (max-width: 460px){
+  .singleMovieImage{
+    width: 13rem !important;
+    height: 15rem !important;
+    border-radius: 10px !important;
+    object-fit: auto;
+  }
+
+  .singleMovieInfo{
+    font-size: 10px;
+  }
+}
+@media (max-width:1200px){
+  .singleMovieInfo{
+    font-size: 1rem;
+  }
+  .delete{
+    margin-top: 1rem;
+  }
+}
+
+/* @media (max-width:575px){
+  .card{
+    width: 8rem;
+    height: 12rem;
+  }
+
+  .card:hover{
+    transform: scale(1.1s);
+  }
+
+  .card-img-top{
+    height: 9rem;
+    width: 100%;
+  }
+} */
