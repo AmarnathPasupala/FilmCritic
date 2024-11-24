@@ -3,6 +3,7 @@ require('dotenv').config()
 
 const mongoose = require('mongoose');
 const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const flash = require('connect-flash');
 const express=require("express");
 const port=process.env.PORT;
@@ -25,8 +26,17 @@ let usersRoute=require("./routes/users.js");
 let mongoURL='mongodb://127.0.0.1:27017/movies';
 let dbURL=process.env.UPDATEDBURL;
 
+let store= MongoStore.create({
+    mongoUrl: dbURL,
+    crypto: {
+        secret: process.env.SECRET,
+    },
+    touchAfter: 24 * 3600
+  })
+
 let sessionOptions={
-    secret: 'keyboard cat',
+    store,
+    secret: process.env.SECRET,
     resave: false,
     saveUninitialized: true,
     // cookie: { secure: true }
@@ -46,7 +56,7 @@ main()
 .catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect(mongoURL);
+  await mongoose.connect(dbURL);
 }
 
 app.set('view engine', 'ejs');
