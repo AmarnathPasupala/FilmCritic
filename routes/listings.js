@@ -11,7 +11,10 @@ const listingController=require("../controllers/listings.js")
 
 router.route("/")
 .get(wrapAsync(listingController.indexRoute))
-.post(isLoggedIn,listingValidation ,wrapAsync(listingController.addNewMovie))
+.post(isLoggedIn,listingValidation ,wrapAsync(listingController.addNewMovie));
+
+
+router.post("/movieTitle",wrapAsync(listingController.searchedMovie));
 
 
 

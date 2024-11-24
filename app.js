@@ -1,8 +1,11 @@
+require('dotenv').config()
+// console.log(process.env)
+
 const mongoose = require('mongoose');
 const session = require('express-session');
 const flash = require('connect-flash');
 const express=require("express");
-const port=8080;
+const port=process.env.PORT;
 const User=require("./models/users.js")
 const app=express();
 const path=require("path");
@@ -18,6 +21,9 @@ const {listingValidationSchema,reviewValidationSchema}=require("./schema.js");
 let listingsRoute=require("./routes/listings.js");
 let reviewsRoute=require("./routes/reviews.js");
 let usersRoute=require("./routes/users.js");
+
+let mongoURL='mongodb://127.0.0.1:27017/movies';
+let dbURL=process.env.UPDATEDBURL;
 
 let sessionOptions={
     secret: 'keyboard cat',
@@ -40,7 +46,7 @@ main()
 .catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect('mongodb://127.0.0.1:27017/movies');
+  await mongoose.connect(mongoURL);
 }
 
 app.set('view engine', 'ejs');

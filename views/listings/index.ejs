@@ -1,5 +1,11 @@
 <% layout("/layouts/boilerplate.ejs") %>
 <body> 
+    <div class="form-check-reverse form-switch">
+        <div class="form-switch-inside">
+            <input class="form-check-input pointer" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+            <label class="form-check-label pointer" for="flexSwitchCheckDefault">Display Movie Year</label>
+        </div>
+      </div>
     <div class="row  row-cols-xxl-6 row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
         <%for (let listing of listings){ %>
             <a class="singleMovie" href="/listings/<%=listing._id%>">
@@ -7,12 +13,26 @@
                     <img src="<%=listing.image%>" class="card-img-top " alt="movieImage">
                     <div class="card-body">
                       <p class="card-title"><%=listing.name%></p>
-                      <p class="card-text"><%=listing.year%></p>                                        
+                      <p class="card-text year"><%=listing.year%></p>                                        
                     </div>
                 </div>  
             </a>      
         <%}%>
     </div>
+    <script>
+        let toggle=document.querySelector(".form-switch-inside");
+        toggle.addEventListener("click",()=>{
+            let years=document.querySelectorAll(".year");
+            for(let year of years){
+                if(year.style.visibility!="visible"){
+                    year.style.visibility="visible";
+                }
+                else{
+                    year.style.visibility="hidden";
+                }
+            }
+        })
+    </script>
 
     
 </body>

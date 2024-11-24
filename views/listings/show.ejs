@@ -13,7 +13,7 @@
         <p>Created by : @<%=listing.owner.username%></p>
         <div class="row">
           <% if(currUser && currUser._id.equals(listing.owner._id) ){ %>
-            <div class="col-xxl-1 ">
+            <div class="col-xxl-2 ">
               <form action="/listings/<%=listing._id%>/edit" method="get">
                 <button class="btn btn-success fontWeight600">Edit</button>
               </form>

@@ -55,3 +55,19 @@ module.exports.editMovie=async(req,res)=>{
     // console.log(id);
     res.render("listings/edit.ejs",{listing});
 }
+
+module.exports.searchedMovie=async(req,res,next)=>{
+    let {movieTitle}=req.body;
+    movieTitle=movieTitle.split(" ").map((val)=>(val.charAt(0).toUpperCase()+val.slice(1))).join(" ");
+    // console.log(movieTitle);
+    let movies= await Listing.find({name:movieTitle});
+    // console.log(typeof movies);
+    // console.log(movies.length);
+    // console.log(movies);
+    if(movies.length<=0)
+    {
+        req.flash("error","Movie not Found");
+        return res.redirect("/listings");
+    }
+    res.render("listings/searchedMovie.ejs",{movies});
+}

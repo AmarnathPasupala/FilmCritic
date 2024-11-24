@@ -1,0 +1,15 @@
+<% layout("/layouts/boilerplate.ejs") %>
+
+<div class="row  row-cols-xxl-6 row-cols-xl-5 row-cols-lg-4 row-cols-md-3 row-cols-sm-2 row-cols-1">
+    <%for (let movie of movies){ %>
+        <a class="singleMovie" href="/listings/<%=movie._id%>">
+            <div class="card indexCard col" >
+                <img src="<%=movie.image%>" class="card-img-top " alt="movieImage">
+                <div class="card-body">
+                  <p class="card-title"><%=movie.name%></p>
+                  <p class="card-text year"><%=movie.year%></p>                                        
+                </div>
+            </div>  
+        </a>      
+    <%}%>
+</div>

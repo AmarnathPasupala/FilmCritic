@@ -80,6 +80,25 @@ body{
   color: #111 !important;
 }
 
+.movieSearchInput{
+  height: 3rem;
+  width: 20rem;
+  border-right: none;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
+}
+
+.movieSearchButton{
+  height: 3rem !important;
+  width: 4rem;
+  margin-left: -0.3rem;
+  border: 0.1px thin black !important;
+  border-left: none;
+  background-color: rgb(229, 9, 20);
+  border-top-right-radius: 1.5rem;
+  border-bottom-right-radius: 1.5rem;
+}
+
 .fontWeight600{
   font-weight: 600 !important;
 }
@@ -113,6 +132,29 @@ body{
 
 .container-fluid{
   background-color: #fff !important;
+}
+
+
+
+/* toggle  */
+
+.form-switch{
+  border: 1px solid #000;
+  width: 15rem;
+  padding: 1.4rem;
+  border-radius: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  
+}
+.pointer{
+  cursor: pointer;
+}
+
+.year{
+  visibility:hidden;
 }
 
 
