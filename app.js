@@ -56,7 +56,7 @@ main()
 .catch(err => console.log(err));
 
 async function main() {
-  await mongoose.connect(mongoURL);
+  await mongoose.connect(dbURL);
 }
 
 app.set('view engine', 'ejs');
