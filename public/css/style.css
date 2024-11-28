@@ -29,7 +29,7 @@ body{
   /* color: #FFFF0A; */
   /* color: #fe424d; */
   color: rgb(229, 9, 20);
-  margin: 0 1rem 0 3.5rem !important;
+  margin: 0 1rem 0 1rem !important;
 }
 
 .mainIcon{
@@ -119,7 +119,7 @@ body{
 
 .show{
   background-color: #fff !important;
-  padding-left: 3rem !important;
+  padding-left: 1rem !important;
   transition: 0.5s ease-in-out;
   margin-top: 1rem;
   width: 100% !important;
@@ -138,6 +138,15 @@ body{
 
 /* toggle  */
 
+.searchAndYearDisplay{
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+.phoneSearchBar{
+  display: none;
+}
+
 .form-switch{
   border: 1px solid #000;
   width: 15rem;
@@ -146,7 +155,7 @@ body{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1.5rem;
+  
   
 }
 .pointer{
@@ -205,6 +214,31 @@ body{
 
 }
 
+
+
+
+/* view   */
+.viewMovie{
+  display: flex;
+  gap: 1rem;
+}
+
+.singleMovieImageDiv{
+  margin-left: 18rem;
+  margin-right: 3rem;
+}
+
+.viewMovieButtons{
+  display: flex;
+  gap: 2rem;
+}
+
+
+
+
+
+
+
 /* footer */
 .footer{
   background-color: #ebebeb;
@@ -215,6 +249,7 @@ body{
   gap: 1rem;
   padding-top: 1.1rem;
   margin-top: 1rem !important;
+  padding-bottom: 1.2rem !important;
 }
 
 .footerImages{
@@ -282,16 +317,7 @@ body{
 /* media-queires */
 
 @media (max-width: 460px){
-  .singleMovieImage{
-    width: 13rem !important;
-    height: 15rem !important;
-    border-radius: 10px !important;
-    object-fit: auto;
-  }
-
-  .singleMovieInfo{
-    font-size: 10px;
-  }
+  
 }
 @media (max-width:1200px){
   .singleMovieInfo{
@@ -299,6 +325,93 @@ body{
   }
   .delete{
     margin-top: 1rem;
+  }
+  
+  .card-img-top{
+    width: 7rem;
+    height: 10rem;
+  }
+  .container1{
+    margin: 0 1rem 0 1rem;
+    
+  }
+
+  .indexCard{
+    margin-bottom: 1rem !important;
+   }
+
+   .card-body{
+    margin-top: 0.5rem !important;
+    font-size: 0.85rem;
+   }
+   .card-title{
+   margin-bottom: 0 !important;
+  }
+  .footer{
+    font-size: 0.9rem !important;
+    padding-bottom: 1.2rem !important;
+  }
+  .fontWeight600{
+    font-weight: 400;
+  }
+  .form-switch{
+    font-size: 0.8rem;
+    width: 11rem;
+    padding: 1.2rem;
+  }
+
+  .searchBar{
+    display: none;
+  }
+
+  .phoneSearchBar{
+    display: inline;
+    margin-left: 2rem;
+    font-size: 0.7rem !important;
+  }
+
+  .movieSearchInput{
+    width: 8rem;
+    height: 2.5rem;
+  }
+  .movieSearchButton{
+    width: 2.5rem;
+    height: 2.6rem !important;
+  }
+
+
+  /* view  */
+  .singleMovieImage{
+    width: 18rem !important;
+    height: 23rem !important;
+    border-radius: 10px !important;
+    object-fit: auto;
+    margin-left: 3.3rem;
+  }
+
+
+
+  .singleMovieInfo{
+    font-size: 0.9rem !important;
+    margin-left: 3.5rem;
+  }
+  .singleMovieImageDiv{
+    margin: 0 !important;
+  }
+
+  .singleMovieInfo p{
+    margin-bottom: 0.2rem !important;
+  }  
+
+  .viewMovie{
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center;     */
+  }
+  .viewMovieButtons{
+    margin-top: 1rem;
+    align-items: center;
   }
 }
 

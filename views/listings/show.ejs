@@ -1,26 +1,26 @@
 <% layout("./layouts/boilerplate.ejs") %>
 <body>
-    <div class="row mb-4 ">
-      <div class="col-3 offset-2">
+    <div class=" viewMovie">
+      <div class="singleMovieImageDiv">
         <img class="singleMovieImage" src="<%=listing.image%>" style="width: 21rem; border-radius: 1rem;" alt="">
       </div>
-      <div class="col-4 ms-2 offset-2 col-lg-4 col-sm-12 mt-4 singleMovieInfo">
+      <div class="singleMovieInfo">
         <p><%=listing.name%></p>
         <p><%=listing.year%></p>
         <p class="mb-4"><%=listing.genre%></p>
         <p>Cast : <%=listing.cast%></p>
         <p>Director : <%=listing.director%></p>
         <p>Created by : @<%=listing.owner.username%></p>
-        <div class="row">
+        <div class="viewMovieButtons">
           <% if(currUser && currUser._id.equals(listing.owner._id) ){ %>
-            <div class="col-xxl-2 ">
+            <div class="vieMovieEditButton">
               <form action="/listings/<%=listing._id%>/edit" method="get">
                 <button class="btn btn-success fontWeight600">Edit</button>
               </form>
             </div>
-            <div class="col-1">
+            <div class="viewMovieDeleteButton">
                 <form action="/listings/<%=listing._id%>?_method=delete" method="post">
-                  <button class="btn btn-danger fontWeight600 delete">Delete</button>
+                  <button class="btn btn-danger fontWeight600 ">Delete</button>
                 </form>
             </div>
           <% } %>
@@ -32,7 +32,7 @@
       <hr>
     </div>
 
-    <div class="row  mt-5">
+    <div class="row  mt-3">
       <%if(currUser){%>
         <h3 class="col-8 offset-2 mb-3">Leave a Review</h3>
         <form action="/listings/<%=listing._id%>/reviews" method="post" class="needs-validation" novalidate>
@@ -78,9 +78,9 @@
       <%}%>
 
     </div>
-    <hr>
+    
    
-      <div class="row offset-2">
+      <div class="row offset-2 mt-3">
         <h2>Reviews</h2>
         <% for(let review of listing.reviews){ %>
           <div class="card col-lg-5 col-9 ms-2  mb-3" >
