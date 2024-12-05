@@ -3,10 +3,10 @@
     <div class="container">
         <div class="row">
            <div class="col-10 offset-1">
-            <form class="needs-validation" novalidate action="/listings" method="post" >
+            <form class="needs-validation" novalidate action="/listings" method="post" enctype="multipart/form-data" >
                 <div>
-                    <label class="from-label" for="image">Paste Movie Image Address URL</label>
-                    <input class="form-control" type="text" placeholder="place image address" name="listing[image]" id="image" >
+                    <label class="from-label" for="image">Upload Image</label>
+                    <input class="form-control" type="file" placeholder="Upload Image" name="listing[image]" id="image" required>
                     <div class="valid-feedback">
                         Looks Good!
                     </div>

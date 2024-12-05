@@ -3,9 +3,8 @@ let Review = require("./reviews.js");
 
 let listingSchema=new mongoose.Schema({
     image:{
-        type:String,
-        default:"https://static.vecteezy.com/system/resources/previews/011/860/693/non_2x/its-movie-time-vector.jpg",
-        set: (v)=>v===""?"https://static.vecteezy.com/system/resources/previews/011/860/693/non_2x/its-movie-time-vector.jpg":v,
+        url:String,
+        filename:String,
     },
     name:{
         type:String,

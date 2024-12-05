@@ -27,6 +27,12 @@ module.exports.updateRoute=async (req,res,next)=>{
     let {id}=req.params;
     // console.log(req.body.listing);
     let listing= await Listing.findByIdAndUpdate(id,{...req.body.listing});
+    if(typeof req.file!=="undefined"){
+        let url=req.file.path;
+        let filename=req.file.filename;
+        listing.image={url,filename};
+        await listing.save();
+    }
     req.flash("success","Movie Listing Updated");
     res.redirect(`/listings/${id}`);
 }
@@ -34,15 +40,18 @@ module.exports.updateRoute=async (req,res,next)=>{
 module.exports.deleteRoute=async (req,res)=>{
     let {id}=req.params;
     let deleteListing= await Listing.findByIdAndDelete(id,{new:true});
-    console.log(deleteListing);
+    // console.log(deleteListing);
     req.flash("success","Movie Listing Deleted!");
     res.redirect("/listings");
 }
 
 module.exports.addNewMovie=async (req,res,next)=>{
     // console.log(req.body);
+    let url=req.file.path;
+    let filename=req.file.filename;
     let listing= await new Listing(req.body.listing); 
-    listing.owner=req.user._id;   
+    listing.owner=req.user._id;
+    listing.image={url,filename};
     await listing.save();
     console.log(listing);
     req.flash("success","Movie Listing Created");
@@ -52,8 +61,12 @@ module.exports.addNewMovie=async (req,res,next)=>{
 module.exports.editMovie=async(req,res)=>{
     let {id}=req.params;
     let listing= await Listing.findById(id);
+    console.log(listing.image.url);
+    let originalImageUrl=listing.image.url;
+    originalImageUrl=originalImageUrl.replace("/upload","/upload/w_170,h_250");
+    console.log(originalImageUrl)
     // console.log(id);
-    res.render("listings/edit.ejs",{listing});
+    res.render("listings/edit.ejs",{listing,originalImageUrl});
 }
 
 module.exports.searchedMovie=async(req,res,next)=>{

@@ -18,7 +18,7 @@
         <%for (let listing of listings){ %>
             <a class="singleMovie" href="/listings/<%=listing._id%>">
                 <div class="card indexCard col" >
-                    <img src="<%=listing.image%>" class="card-img-top " alt="movieImage">
+                    <img src="<%=listing.image.url%>" class="card-img-top " alt="movieImage">
                     <div class="card-body">
                       <p class="card-title"><%=listing.name%></p>
                       <p class="card-text year"><%=listing.year%></p>                                        

@@ -3,16 +3,17 @@
     <div class="container">
         <div class="row">
             <div class="col-10 offset-1">
-                <form action="/listings/<%=listing._id%>?_method=put" method="post" class="needs-validation" novalidate>
+                <form action="/listings/<%=listing._id%>?_method=put" method="post" class="needs-validation" enctype="multipart/form-data" novalidate>
+                    <img src="<%=originalImageUrl%>" alt="">
                     <div >
-                        <label class="form-label" for="image">Image URL</label>
-                        <input class="form-control" type="text" name="listing[image]" id="image" value="<%=listing.image%>" required>
-                        <div class="invalid-feedback">
+                        <label class="form-label" for="image">Upload Image</label>
+                        <input class="form-control" type="file" name="listing[image]" id="image" value="<%=listing.image%>" >
+                        <!-- <div class="invalid-feedback">
                             Paste Movie Image Address URL
                         </div>
                         <div class="valid-feedback">
                             Looks Good!
-                        </div>
+                        </div> -->
                     </div><br>
                     <div >
                         <label class="form-label" for="name">Movie</label>
