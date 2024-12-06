@@ -4,7 +4,7 @@
     <%for (let movie of movies){ %>
         <a class="singleMovie" href="/listings/<%=movie._id%>">
             <div class="card indexCard col" >
-                <img src="<%=movie.image%>" class="card-img-top " alt="movieImage">
+                <img src="<%=movie.image.url%>" class="card-img-top " alt="movieImage">
                 <div class="card-body">
                   <p class="card-title"><%=movie.name%></p>
                   <p class="card-text year"><%=movie.year%></p>                                        
